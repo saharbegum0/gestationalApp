@@ -163,6 +163,7 @@ class _LMPState extends State<LMP> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
+      color: scaffoldBgColor,
       padding: EdgeInsets.symmetric(horizontal: 10.sp),
      child: Column(children: [
        Text(widget.name.toString()),
@@ -190,7 +191,40 @@ class _LMPState extends State<LMP> {
        Row(children: [
          SizedBox(height: 4.w,),
          Text("Beginning of third trimester : $date"),
+       ],),
+       RSizedBox.vertical(20.h),
+       Container(
+         decoration: BoxDecoration(
+             color: Colors.white,
+          // border: Border.all(width: 1.w),
+           borderRadius: BorderRadius.circular(15.r)
+         ),
+         alignment: Alignment.center,
+         height: 70.h,
+
+         child: Column(
+           mainAxisAlignment: MainAxisAlignment.center,
+           children: [
+
+         Row(children: [
+           SizedBox(width: 20.w,),
+
+
+           Icon(Icons.circle_notifications_outlined),
+    SizedBox(width: 20.w,),
+           Column(
+             children: [
+               const Text("Health bmi for current Gestational Age "),
+               SizedBox(height: 10.h,),
+               Text("Between  20.3 and  25"),
+
+             ],
+           )
+         ],)
        ],)
+         ,),
+       SizedBox(height: 10.h,),
+       Text("Learn how the calculus is done"),
 
      ],)
     );
