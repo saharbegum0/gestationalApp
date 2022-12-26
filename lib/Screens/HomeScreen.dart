@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gestationalage/Core/Constant/Colors.dart';
 
+import 'UiComponent/MyTextField.dart';
 import 'UiComponent/Tabbutton.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -13,7 +15,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _mySelectedpage = 0;
 
-  PageController? _pageController;
+  PageController? _pageController=PageController();
+
 
   void _onchangepage(int pagenum) {
     setState(() {
@@ -40,17 +43,29 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-
-
     _pageController = PageController();
   }
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(title: Column(children: [
-        Row(children:  [
-          SizedBox(child: Text("Gestational Age Calculate"),),SizedBox(width: 50,),
+      appBar: AppBar(
+        titleSpacing: 0,
+        elevation: 0,
+        backgroundColor: primaryColor,
+        toolbarHeight: 100.h,
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children:  [
+
+          Padding(
+            padding:  EdgeInsets.only(left: 8.0.sp),
+            child: SizedBox(child: Text("Gestational Age Calculate"),),
+          ),
+          SizedBox(width: 50,),
           Text("Clear"),Spacer(),
 
           Align(
@@ -64,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Colors.white,
                 onSelected: onSelected,
                 itemBuilder: (context) => [
-                  PopupMenuItem(
+                  const PopupMenuItem(
                     child: Text("Try any feature free",),
                         // style: appBarstyle.copyWith(
                         //     fontSize: 16.sp,
@@ -79,25 +94,36 @@ class _HomeScreenState extends State<HomeScreen> {
         // tab bar started
 
         Container(
-          padding: EdgeInsets.only(bottom: 3.sp),
+          padding: EdgeInsets.symmetric(horizontal: 10.sp),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Tabbutton(
-                text: "BRANDS",
+
+                text: "LMP",
                 pagenumber: 0,
                 myselectedpage: _mySelectedpage,
                 onPressed: () {
                   _onchangepage(0);
                 },
               ),
-              Spacer(),
               Tabbutton(
-                text: "GENERIC",
+                text: "Ultrasound",
                 pagenumber: 1,
                 myselectedpage: _mySelectedpage,
                 onPressed: () {
                   _onchangepage(1);
+
+                },
+
+              ),
+
+              Tabbutton(
+                text: "BMI",
+                pagenumber: 2,
+                myselectedpage: _mySelectedpage,
+                onPressed: () {
+                  _onchangepage(2);
                   // Navigator.push(context, MaterialPageRoute(builder: (context)=>IncludedDrugScreen()));
                 },
               ),
@@ -108,9 +134,66 @@ class _HomeScreenState extends State<HomeScreen> {
       ],),),
 
         body: Container(
-          child: Column(children: [
-          //  PopupMenuButton(itemBuilder: itemBuilder)
-          ],),
+         child: PageView(
+           controller: _pageController,
+           children: [
+             LMP(name:'lmp page'),
+             LMP(name:'Ultrasound'),
+             LMP(name:'bmi calculattor'),
+           ],
+         ),
         ));
   }
 }
+
+class LMP extends StatefulWidget {
+  String? name;
+   LMP({this.name,Key? key}) : super(key: key);
+
+
+  @override
+  State<LMP> createState() => _LMPState();
+}
+
+class _LMPState extends State<LMP> {
+  final calenderTextController=TextEditingController();
+  String? age="2 weeks and 2 days",date="12/2/2022";
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 10.sp),
+     child: Column(children: [
+       Text(widget.name.toString()),
+       SizedBox(height: 10.h,),
+
+
+       MyTextField(size: size, textcontroller: calenderTextController, border: const OutlineInputBorder(
+           borderSide: BorderSide(color: Colors.white, width: 1.0),),icon: Icons.calendar_today,),
+       SizedBox(height: 20.h,),
+       Row(children: [
+         SizedBox(height: 4.w,),
+         Text("Gestational age : $age")
+       ],),
+       SizedBox(height: 20.h,),
+       Row(children: [
+         SizedBox(height: 4.w,),
+         Text("Estimated Due Date (EDD) : $date"),
+       ],),
+       SizedBox(height: 20.h,),
+       Row(children: [
+         SizedBox(height: 4.w,),
+         Text("End of first trimester  : $date"),
+       ],),
+       SizedBox(height: 20.h,),
+       Row(children: [
+         SizedBox(height: 4.w,),
+         Text("Beginning of third trimester : $date"),
+       ],)
+
+     ],)
+    );
+  }
+}
+

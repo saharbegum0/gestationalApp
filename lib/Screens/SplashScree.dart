@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:gestationalage/Screens/HomeScreen.dart';
 
-import '../Core/Colors.dart';
+import '../Core/Constant/Colors.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -22,8 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
             MaterialPageRoute(builder:
 
                 (context) =>
-
-                const HomeScreen()
+                    HomeScreen()
 
             )
 
