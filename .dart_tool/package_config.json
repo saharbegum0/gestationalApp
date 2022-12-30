@@ -104,10 +104,28 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "intl",
+      "rootUri": "file:///Users/mac/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "lints",
       "rootUri": "file:///Users/mac/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/lints-2.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.17"
+    },
+    {
+      "name": "mask_text_input_formatter",
+      "rootUri": "file:///Users/mac/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/mask_text_input_formatter-2.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "masked_text",
+      "rootUri": "file:///Users/mac/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/masked_text-1.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "matcher",
@@ -124,6 +142,12 @@
     {
       "name": "meta",
       "rootUri": "file:///Users/mac/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "nested",
+      "rootUri": "file:///Users/mac/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/nested-1.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -194,6 +218,12 @@
       "languageVersion": "2.14"
     },
     {
+      "name": "provider",
+      "rootUri": "file:///Users/mac/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///Users/mac/Downloads/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -222,6 +252,18 @@
       "rootUri": "file:///Users/mac/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "syncfusion_flutter_core",
+      "rootUri": "file:///Users/mac/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_core-20.4.38",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "syncfusion_flutter_gauges",
+      "rootUri": "file:///Users/mac/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_gauges-20.4.38",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
     },
     {
       "name": "term_glyph",
@@ -266,7 +308,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2022-12-26T10:24:31.705912Z",
+  "generated": "2022-12-30T07:08:40.181970Z",
   "generator": "pub",
-  "generatorVersion": "2.18.4"
+  "generatorVersion": "2.18.6"
 }

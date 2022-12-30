@@ -1,9 +1,19 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gestationalage/Screens/SplashScree.dart';
+import 'package:provider/provider.dart';
+
+import 'Screens/View_Models/LMP_ViewModel.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MultiProvider(
+      providers: [
+
+        ChangeNotifierProvider<LMP_ViewModel>(create: (_) => LMP_ViewModel()),
+      ],
+      child :const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
